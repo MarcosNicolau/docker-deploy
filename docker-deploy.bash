@@ -1,30 +1,4 @@
 cd ~
-# UPDATE OS
-echo ===================================================================================================
-echo UPDATING OS
-sudo apt-get update && sudo apt-get upgrade -y
-
-# INSTALLING DOCKER
-echo ===================================================================================================
-echo INSTALLING DOCKER
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
-
- curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-echo \
-  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io 
-sudo docker run hello-world
-
-
 echo ===================================================================================================
 echo THIS IS THE AUTOMATED SERVER DEPLOY FOR DOCKER ENVIROMENTS.
 echo I NEED TO KNOW SOME STUFF FROM YOUR PRIVACY, BUT I PROMISE I WONT STEAL YOU ANYTHING 🙈🙈
@@ -51,6 +25,32 @@ read DOCKER_IMAGE_NAME
 echo ENTER DOCKER IMAGE EXPOSE PORT "(DEFAULTS TO 8080)"
 if [ -z "$DOCKER_PORT" ]; then DOCKER_PORT=8080 
 fi
+
+
+# UPDATE OS
+echo ===================================================================================================
+echo UPDATING OS
+sudo apt-get update && sudo apt-get upgrade -y
+
+# INSTALLING DOCKER
+echo ===================================================================================================
+echo INSTALLING DOCKER
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io 
+sudo docker run hello-world
 
 # NGINX INSTALL
 echo ===================================================================================================
