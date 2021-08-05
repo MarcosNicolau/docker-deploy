@@ -12,7 +12,7 @@ Make it executable
 `$ chmod +x docker-deploy.bash`<br/>
 And finally run it
 `$ bash docker-deploy.bash` <br/>
-## Steps
+## Script steps
 
 1. Prompt for variables which are used during the building
 2. Update OS
