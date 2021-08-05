@@ -1,15 +1,26 @@
 # Automated Docker deployments with bash file
 
-This script is to be run on instance set up.
+This script is to be run on an instance set up. <br/>
+Important, before running the script, make sure you have added the IPV4 to your dns. Otherwise, you won't get https <br/>
+If the script fails at some stage, it won't stop, but it doesn't matter, just run it again and everything will be overwritten 
+## How to run it
 
+### Cloning the repo 
+After cloning the repo
+`$ cd docker-deploy` <br/>
+Make it executable
+`$ chmod +x docker-deploy.bash`<br/>
+And finally run it
+`$ bash docker-deploy.bash` <br/>
 ## Steps
 
-1. Update OS
-2. Prompt for variables which are used during the building
-3. Nginx set up
-4. Get cerbot certificate
-5. Docker login, pull and run
-6. Instruction if you want to add http/2
+1. Prompt for variables which are used during the building
+2. Update OS
+3. Install Docker
+4. Nginx set up
+5. Get cerbot certificate
+6. Docker login, pull and run
+7. Instructions if you want to add http/2
 
 ## Enabling HTTP/2
 
