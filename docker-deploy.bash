@@ -1,7 +1,29 @@
+cd ~
 # UPDATE OS
 echo ===================================================================================================
 echo UPDATING OS
 sudo apt-get update && sudo apt-get upgrade -y
+
+# INSTALLING DOCKER
+echo ===================================================================================================
+echo INSTALLING DOCKER
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io 
+sudo docker run hello-world
+
 
 echo ===================================================================================================
 echo THIS IS THE AUTOMATED SERVER DEPLOY FOR DOCKER ENVIROMENTS.
@@ -12,6 +34,8 @@ echo I NEED TO KNOW SOME STUFF FROM YOUR PRIVACY, BUT I PROMISE I WONT STEAL YOU
 echo ENTER EMAIL:
 read EMAIL
 # DOMAIN
+"❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗IMPORTANT❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗"
+echo MAKE SURE YOU HAVE ADDED THE IPV4 RECORD TO YOUR DNS
 echo ENTER DOMAIN:
 read DOMAIN
 # DOCKER USERNAME
@@ -50,10 +74,10 @@ sudo echo "server {
     location / {
         proxy_pass http://127.0.0.1:8080;
         proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Upgrade \$http_upgrade;
         proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
+        proxy_set_header Host \$host;
+        proxy_cache_bypass \$http_upgrade;
         proxy_redirect off;
      }
 }" > /etc/nginx/sites-available/default
@@ -66,7 +90,7 @@ echo GETTING CERTIFICATE...
 sudo snap install core
 sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
-sudo certbot --nginx --agree-tos -m $EMAIL -d $DOMAIN
+sudo certbot --nginx --agree-tos -m $EMAIL -d default
 
 # AUTOMATIC CERTIFICATE RENEWAL
 echo ===================================================================================================
@@ -140,7 +164,7 @@ sudo nano /etc/nginx/sites-available/default
 # STEP 3
 echo ===================================================================================================
 echo STEP 3: '
-    Below thesez lines:
+    Below these lines:
         include /etc/nginx/conf.d/*.conf;
         include /etc/nginx/sites-enabled/*;
 
