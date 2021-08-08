@@ -1,11 +1,11 @@
-# ADD ENV VARIABLES
-source /app/.deploy.env
-source /app/.docker.env
-
-
 # READ ARGS
 chmod +x read-args.bash
 ./read-args.bash
+
+# ADD ENV VARIABLES FROM ARGS
+source /app/.deploy.env
+source /app/.docker.env
+
 # OS
 chmod +x os.bash
 ./os.bash
