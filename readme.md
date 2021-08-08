@@ -14,7 +14,7 @@ If the script fails at some stage, it won't stop, but it doesn't matter, just ru
 4. Get certbot certificate (you will be prompt)
 5. Enable HTTP/2
 6. Docker login, pull and run
-7. Set CD web-hook listener
+7. Set CD webhook listener
 
 ### How to run it
 
@@ -49,16 +49,16 @@ if you are working with a private repo, you will have to pass your docker creden
 
 ##### Continuos delivery
 
-If you want to set a web-hook listener to pull the image for you, you will have to pass -a CD_PIPELINE_TOKEN=SECRET_TOKEN. <br />
+If you want to set a webhook listener to pull the image for you, you will have to pass -a CD_PIPELINE_TOKEN=SECRET_TOKEN. <br />
 Also, on docker you will have to create a webhook pointing
 to the endpoint you provided. More on that in here [docker-webhooks-docs](https://docs.docker.com/docker-hub/webhooks/) <br />
-By the way, this the repo we are using for it: [web-hook-listener-repo](https://github.com/MarcosNicolau/docker-deploy-instance-bash)<br />
+By the way, this the repo we are using for it: [webhook-listener-repo](https://github.com/MarcosNicolau/web-hook-listener)<br />
 
 Options:
 
 -   `-a CD_PIPELINE_ROUTE`: the route for the auto deploy endpoint, it defaults to /deploy
--   `-a CD_PIPELINE_TOKEN`: the token for your web-hook
--   `-a PIPELINE_CONTAINER_PORT`: the port you want the web-hook to be, it default to 3000
+-   `-a CD_PIPELINE_TOKEN`: the token for your webhook
+-   `-a PIPELINE_CONTAINER_PORT`: the port you want the webhook to be, it default to 3000
 
 <br />
     If you want to be notified on every pull, you will have to pass an email config:
