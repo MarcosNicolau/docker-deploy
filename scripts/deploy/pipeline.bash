@@ -38,7 +38,7 @@ docker run \
         -v /path/to/static-docker-binary:/usr/bin/docker \
         -v /scripts:/scripts \ 
         --env-file /app/.deploy.env 
-        copterexchange/hook-listener
+        marcosnicolau/hook-listener
 
 
 echo YESSSS EVERYTHING WAS DONE CORRECTLY, CONGRATULATIONS '🎉🎉🎉🎉🎉'
