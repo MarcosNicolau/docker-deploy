@@ -47,8 +47,7 @@ if you are working with a private repo, you will have to pass your docker creden
 -   `-a DOCKER_PASSWORD`: your docker password. You should pass an ssh key
 
 
-Continuos delivery:
-
+#### Continuos delivery:
 If you want to set a webhook listener to pull the image for you, you will have to pass -a CD_PIPELINE_TOKEN=SECRET_TOKEN. <br />
 Also, on docker you will have to create a webhook pointing
 to the endpoint you provided. More on that in here [docker-webhooks-docs](https://docs.docker.com/docker-hub/webhooks/) <br />
