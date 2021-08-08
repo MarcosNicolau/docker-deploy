@@ -15,8 +15,7 @@ chmod +x ./create-auto-pull.bash
 
 echo ===================================================================================================
 echo PULLING PIPELINE IMAGE FROM DOCKER...
-docker run  -d \
-        -p $PIPELINE_CONTAINER_PORT:3000 \
+docker run  -d -p $PIPELINE_CONTAINER_PORT:3000 \
         --add-host host.docker.internal:host-gateway \
         -v /var/run/docker.sock:/var/run/docker.sock \
         -v /path/to/static-docker-binary:/usr/bin/docker \
