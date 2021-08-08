@@ -12,7 +12,7 @@ then
         docker rm  app && \
         docker run --name app --env-file ~/app/.docker.env -p 80:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME && \
         DEPLOY_SUCCESS=true 2>&1)
-        curl http://host.docker.internal:$PIPELINE_CONTAINER_PORT/mail/deploy?status=$DEPLOY_SUCCESS&log=$MESSAGE
+        curl http://host.docker.internal:$PIPELINE_CONTAINER_PORT/deploy/mail?status=$DEPLOY_SUCCESS&log=$MESSAGE
 else 
 # private repository, we need to login
         MESSAGE=(docker logout && \
@@ -21,7 +21,7 @@ else
         docker stop app  && \
         docker rm  app && \
         docker run --name app --env-file ~/app/.docker.env -p 80:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME && \
-        curl http://host.docker.internal:$PIPELINE_CONTAINER_PORT/mail/deploy?status=$DEPLOY_SUCCESS&log=$MESSAGE
+        curl http://host.docker.internal:$PIPELINE_CONTAINER_PORT/deploy/mail?status=$DEPLOY_SUCCESS&log=$MESSAGE
 fi
 " > ~/scripts/deploy.sh
 
