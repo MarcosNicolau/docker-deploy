@@ -6,14 +6,14 @@ if [-z $PIPELINE_CONTAINER_PORT] ; then PIPELINE_CONTAINER_PORT=3000
 fi
 echo deploy.sh "
 DEPLOY_SUCCESS=""
-source /app/.deploy.env
-source /app/.docker.env
+source ~/app/.deploy.env
+source ~/app/.docker.env
 if [ -z $DOCKER_USERNAME ]
 then
         MESSAGE=(docker pull $DOCKER_IMAGE_NAME && \
         docker stop app  && \
         docker rm  app && \
-        docker run --name app --env-file /app/.docker.env -p 80:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME && \
+        docker run --name app --env-file ~/app/.docker.env -p 80:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME && \
         DEPLOY_SUCCESS=true 2>&1)
         curl http://host.docker.internal:$PIPELINE_CONTAINER_PORT/mail/deploy?status=$DEPLOY_SUCCESS&log=$MESSAGE
 else 
@@ -22,7 +22,7 @@ else
         docker pull $DOCKER_IMAGE_NAME && \
         docker stop app  && \
         docker rm  app && \
-        docker run --name app --env-file /app/.docker.env -p 80:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME && \
+        docker run --name app --env-file ~/app/.docker.env -p 80:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME && \
         curl http://host.docker.internal:$PIPELINE_CONTAINER_PORT/mail/deploy?status=$DEPLOY_SUCCESS&log=$MESSAGE
 fi
 " > /scripts/deploy.sh

@@ -10,7 +10,7 @@ then
     # DOCKER RUN
     echo ===================================================================================================
     echo RUNNING IMAGE...
-    docker run --name app --env-file /app/.docker.env -p 80:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME
+    docker run --name app --env-file ~/app/.docker.env -p 80:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME
 else 
     echo ===================================================================================================
     echo LOGING INTO DOCKER..
@@ -18,6 +18,6 @@ else
 
     ==================================================================================================
     echo RUNNING IMAGE...
-    docker
+    docker run --name app --env-file ~/app/.docker.env -p 80:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME
 fi
 
