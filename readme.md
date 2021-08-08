@@ -20,8 +20,9 @@ If the script fails at some stage, it won't stop, but it doesn't matter, just ru
 
 ```
 git clone https://github.com/MarcosNicolau/docker-deploy.git
-chmod +x ./docker-deploy/scripts/deploy/index.bash
-./docker-deploy/scripts/deploy/index.bash \
+cd docker-deploy/scripts/deploy
+chmod +x ./index.bash
+./index.bash \
     -a DOMAIN="www.yourwebsite.com yourwebsite.com" \
     -a EMAIL=example@example.com \
     -a DOCKER_IMAGE_NAME=user/imagename:latest \
