@@ -1,27 +1,29 @@
-# READ ARGS
-chmod +x read-args.bash
-./read-args.bash
+#!/bin/bash
 
-# ADD ENV VARIABLES FROM ARGS
-source /app/.deploy.env
-source /app/.docker.env
+# READ ARGS
+chmod +x os.bash
+source ./read-args.bash
+
+# IMPORT VARIABLES FROM ARGS READING
+source ~/app/.deploy.env
+source ~/app/.docker.env
 
 # OS
 chmod +x os.bash
-./os.bash
+source ./os.bash
 # NGINX SETUP
 chmod +x nginx.bash
-./nginx.bash
+source ./nginx.bash
 # GET CERTIFICATE
 chmod +x certificate.bash
-./certificate.bash
+source ./certificate.bash
 # HTTP/2
 chmod +x http-2.bash
-./http-2.bash
+source ./http-2.bash
 # DOCKER 
 chmod +x docker.bash
-./docker.bash
+source ./docker.bash
 # PIPELINE
 chmod +x pipeline.bash
-./pipeline.bash
+source ./pipeline.bash
 

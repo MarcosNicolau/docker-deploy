@@ -3,6 +3,8 @@ echo ===========================================================================
 echo UPDATING OS
 sudo apt-get update && sudo apt-get upgrade -y
 
+
+
 # INSTALLING DOCKER
 echo ===================================================================================================
 echo INSTALLING DOCKER
