@@ -19,7 +19,7 @@ If the script fails at some stage, it won't stop, but it doesn't matter, just ru
 ### How to run it
 
 ```
-git clone https://github.com/MarcosNicolau/docker-deploy-instance-bash.git
+git clone https://github.com/MarcosNicolau/docker-deploy.git
 chmod +x ./docker-deploy/scripts/deploy/index.bash
 ./docker-deploy/scripts/deploy/index.bash \
     -a DOMAIN="www.yourwebsite.com yourwebsite.com" \
