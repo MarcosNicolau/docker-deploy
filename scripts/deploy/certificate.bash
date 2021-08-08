@@ -6,7 +6,7 @@ sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 # REPLACE WHITE SPACES FOR COMMA
 DOMAINS_CERTBOT_SINTAX=$( echo $DOMAIN | sed 's/ /,/g' )
-sudo certbot --nginx --agree-tos -m $EMAIL --hsts --uir -n -d $DOMAINS_CERTBOT_SINTAX
+sudo certbot --nginx --agree-tos -m $EMAIL -n -d $DOMAINS_CERTBOT_SINTAX
 
 # AUTOMATIC CERTIFICATE RENEWAL
 echo ===================================================================================================
