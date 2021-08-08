@@ -13,7 +13,7 @@ If the script fails at some stage, it won't stop, but it doesn't matter, just ru
 3. Nginx set up
 4. Get certbot certificate
 5. Enable HTTP/2
-6. Docker login, pull and run
+6. Docker run
 7. Set CD webhook listener
 
 ### How to run it
@@ -55,7 +55,7 @@ to the endpoint you provided. More on that in here [docker-webhooks-docs](https:
 By the way, this the repo we are using for it: [webhook-listener-repo](https://github.com/MarcosNicolau/web-hook-listener)<br />
 
 Options:
--   `-a PIPELINE_ROUTE`: the route for the auto deploy endpoint, it defaults to /deploy
+-   `-a PIPELINE_ROUTE`: the route for the auto deploy endpoint, it defaults to /deploy. Note that all the routes that start with `PIPELINE_ROUTE` will be redirected to the webhook
 -   `-a PIPELINE_TOKEN`: the token for your webhook
 -   `-a PIPELINE_CONTAINER_PORT`: the port you want the webhook to be, it default to 3000
 
