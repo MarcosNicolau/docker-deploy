@@ -11,7 +11,7 @@ If the script fails at some stage, it won't stop, but it doesn't matter, just ru
 1. Update OS
 2. Install Docker
 3. Nginx set up
-4. Get certbot certificate (you will be prompt)
+4. Get certbot certificate
 5. Enable HTTP/2
 6. Docker login, pull and run
 7. Set CD webhook listener
