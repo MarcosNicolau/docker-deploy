@@ -47,7 +47,7 @@ if you are working with a private repo, you will have to pass your docker creden
 -   `-a DOCKER_USERNAME`: your docker username
 -   `-a DOCKER_PASSWORD`: your docker password. You should pass an ssh key
 
-##### Continuos delivery
+Continuos delivery:
 
 If you want to set a webhook listener to pull the image for you, you will have to pass -a CD_PIPELINE_TOKEN=SECRET_TOKEN. <br />
 Also, on docker you will have to create a webhook pointing
@@ -69,6 +69,8 @@ Options:
 -   `-a NOTIFICATION_EMAIL_FROM`: mail transporter from
 -   `-a NOTIFICATION_EMAIL_TO`: mail transporter to
 
+Alternatively, you can pass all the options in a ~/app/.deploy.env
+
 ### Pass env variables to your Docker image
 
 If you need to pass env variables to your image, you can do so by passing -d flag
@@ -77,3 +79,5 @@ If you need to pass env variables to your image, you can do so by passing -d fla
     ./docker-deploy/scripts/deploy/docker-deploy.bash \
         -d ENV_VARIABLE_FOR_CONTAINER_DOCKER=hello!
 ```
+
+Alternatively, you can pass all the options in a ~/app/.docker.env
