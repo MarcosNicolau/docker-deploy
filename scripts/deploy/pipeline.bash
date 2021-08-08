@@ -37,8 +37,8 @@ docker run \
         -v /var/run/docker.sock:/var/run/docker.sock \
         -v /path/to/static-docker-binary:/usr/bin/docker \
         -v /scripts:/scripts \ 
-        --env-file /app/.deploy.env 
-        marcosnicolau/hook-listener
+        --env-file /app/.deploy.env \
+        marcosnicolau/webhook-listener
 
 
 echo YESSSS EVERYTHING WAS DONE CORRECTLY, CONGRATULATIONS '🎉🎉🎉🎉🎉'
