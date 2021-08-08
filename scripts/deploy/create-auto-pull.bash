@@ -25,4 +25,4 @@ else
 fi
 " > ~/scripts/deploy.sh
 
-chmod +x /scripts/deploy.sh
+chmod +x ~/scripts/deploy.sh
