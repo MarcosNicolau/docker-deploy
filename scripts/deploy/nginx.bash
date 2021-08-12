@@ -1,4 +1,5 @@
-source $PATH/.deploy.env
+PATH_TO_DIR=~/docker-deploy
+source $PATH_TO_DIR/.deploy.env
 
 # NGINX INSTALL
 echo ===================================================================================================

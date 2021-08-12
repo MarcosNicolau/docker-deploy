@@ -1,4 +1,5 @@
-source $PATH/.deploy.env
+PATH_TO_DIR=~/docker-deploy
+source $PATH_TO_DIR/.deploy.env
 
 # DOCKER LOGIN
 echo ===================================================================================================
@@ -10,7 +11,7 @@ then
     # PUBLIC REPOSITORY
     echo ===================================================================================================
     echo RUNNING IMAGE...
-    docker run --name app --env-file $PATH/.docker.env -p $DOCKER_PORT:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME
+    docker run --name app --env-file $PATH_TO_DIR/.docker.env -p $DOCKER_PORT:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME
 else 
     # PRIVATE REPOSITORY, WE NEED TO LOGIN
     echo ===================================================================================================
@@ -19,6 +20,6 @@ else
 
     ==================================================================================================
     echo RUNNING IMAGE...
-    docker run --name app $PATH/.docker.env -p $DOCKER_PORT:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME
+    docker run --name app $PATH_TO_DIR/.docker.env -p $DOCKER_PORT:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME
 fi
 

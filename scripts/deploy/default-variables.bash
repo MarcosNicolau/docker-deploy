@@ -1,4 +1,5 @@
-source $PATH/.deploy.env
+PATH_TO_DIR=~/docker-deploy
+source $PATH_TO_DIR/.deploy.env
 
 if [ -z $PIPELINE_DEPLOY_ROUTE ]; then echo 'PIPELINE_DEPLOY_ROUTE=/deploy' >> source ~/docker-deploy/.deploy.env
 fi

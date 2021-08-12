@@ -1,14 +1,13 @@
 #!/bin/bash
-PATH=~/docker-deploy
-SCRIPTS_PATH=$PATH/scripts/deploy
-
+PATH_TO_DIR=~/docker-deploy
+SCRIPTS_PATH=$PATH_TO_DIR/scripts/deploy
 # READ ARGS
-chmod +x $PATH/os.bash
-source $PATH/read-args.bash
+chmod +x $SCRIPTS_PATH/os.bash
+source $SCRIPTS_PATH/read-args.bash
 
 # IMPORT VARIABLES FROM ARGS READING
-source $PATH/.deploy.env
-source $PATH/.docker.env
+source $PATH_TO_DIR/.deploy.env
+source $PATH_TO_DIR/.docker.env
 
 
 # DEFAULT VARIABLES
