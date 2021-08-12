@@ -1,29 +1,35 @@
 #!/bin/bash
+PATH=~/docker-deploy
+SCRIPTS_PATH=$PATH/scripts/deploy
 
 # READ ARGS
-chmod +x os.bash
-source ./read-args.bash
+chmod +x $PATH/os.bash
+source $PATH/read-args.bash
 
 # IMPORT VARIABLES FROM ARGS READING
-source ~/app/.deploy.env
-source ~/app/.docker.env
+source $PATH/.deploy.env
+source $PATH/.docker.env
 
+
+# DEFAULT VARIABLES
+chmod +x $SCRIPTS_PATH/default-variables.bash
+source $SCRIPTS_PATH/default-variables.bash
 # OS
-chmod +x os.bash
-source ./os.bash
+chmod +x $SCRIPTS_PATH/os.bash
+source $SCRIPTS_PATH/os.bash
 # NGINX SETUP
-chmod +x nginx.bash
-source ./nginx.bash
+chmod +x $SCRIPTS_PATH/nginx.bash
+source $SCRIPTS_PATH/nginx.bash
 # GET CERTIFICATE
-chmod +x certificate.bash
-source ./certificate.bash
+chmod +x $SCRIPTS_PATH/certificate.bash
+source $SCRIPTS_PATH/certificate.bash
 # HTTP/2
-chmod +x http-2.bash
-source ./http-2.bash
+chmod +x $SCRIPTS_PATH/http-2.bash
+source $SCRIPTS_PATH/http-2.bash
 # DOCKER 
-chmod +x docker.bash
-source ./docker.bash
+chmod +x $SCRIPTS_PATH/docker.bash
+source $SCRIPTS_PATH/docker.bash
 # PIPELINE
-chmod +x pipeline.bash
-source ./pipeline.bash
+chmod +x $SCRIPTS_PATH/pipeline.bash
+source $SCRIPTS_PATH/pipeline.bash
 

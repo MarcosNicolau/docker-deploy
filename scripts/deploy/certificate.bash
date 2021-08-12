@@ -1,3 +1,4 @@
+source $PATH/.deploy.env
 # GET CERTIFICATE
 echo ===================================================================================================
 echo GETTING CERTIFICATE...

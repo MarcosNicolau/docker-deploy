@@ -1,3 +1,5 @@
+source $PATH/.deploy.env
+
 # NGINX INSTALL
 echo ===================================================================================================
 echo INSTALLING NGINX
@@ -13,13 +15,8 @@ sudo systemctl enable nginx
 # CREATE SERVER LISTENING
 echo ===================================================================================================
 echo CREATING NGINX SERVER BASED ON DOMAIN...
+
 sudo rm /etc/nginx/sites-available/default
-
-if [ -z $PIPELINE_DEPLOY_ROUTE ]; then PIPELINE_DEPLOY_ROUTE=/deploy
-fi
-
-if [ -z $PIPELINE_CONTAINER_PORT ]; then PIPELINE_CONTAINER_PORT=8880
-fi
 
 sudo echo "server {
     listen 80;
