@@ -11,7 +11,7 @@ echo ===========================================================================
 echo SETTING PIPELINE...
 cp $SCRIPTS_PATH/auto-deploy.bash /scripts/deploy.sh 
 cp $PATH_TO_DIR/.deploy.env /scripts/.deploy.env 
-cp $PATH_TO_DIR/.deploy.env /scripts/.docker.env 
+cp $PATH_TO_DIR/.docker.env /scripts/.docker.env 
 
 echo ===================================================================================================
 echo PULLING PIPELINE IMAGE FROM DOCKER...
