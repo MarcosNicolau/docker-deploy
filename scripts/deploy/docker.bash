@@ -20,6 +20,6 @@ else
 
     echo ==================================================================================================
     echo RUNNING IMAGE...
-    docker run --name app $PATH_TO_DIR/.docker.env -p $DOCKER_PORT:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME
+    docker run --name app --env-file $PATH_TO_DIR/.docker.env -p $DOCKER_PORT:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME
 fi
 
