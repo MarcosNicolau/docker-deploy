@@ -18,7 +18,7 @@ else
     echo LOGGING INTO DOCKER..
     docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
-    ==================================================================================================
+    echo ==================================================================================================
     echo RUNNING IMAGE...
     docker run --name app $PATH_TO_DIR/.docker.env -p $DOCKER_PORT:$DOCKER_EXPOSE_PORT -d $DOCKER_IMAGE_NAME
 fi

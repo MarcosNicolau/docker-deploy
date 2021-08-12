@@ -2,10 +2,10 @@ PATH_TO_DIR=~/docker-deploy
 source $PATH_TO_DIR/.deploy.env
 
 # CD
-if [ -z $PIPELINE_TOKEN]; then 
-        echo YESSSS EVERYTHING WAS DONE CORRECTLY, CONGRATULATIONS '🎉🎉🎉🎉🎉' 
-        exit
+if [ -z $PIPELINE_DEPLOY_ROUTE ];then echo YESSSS EVERYTHING WAS DONE CORRECTLY, CONGRATULATIONS '🎉🎉🎉🎉🎉'  && exit
 fi
+
+mkdir -p /scripts
 
 echo ===================================================================================================
 echo SETTING PIPELINE...
